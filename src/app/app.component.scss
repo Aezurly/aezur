@@ -1,0 +1,24 @@
+@import "../variables.scss";
+
+.blob-container {
+    display:flex;
+    width:100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    opacity: 0.5;
+}
+
+@for $i from 1 through 8 {
+    .blob:nth-child(#{$i}) {
+        transform: rotate(random(360)+ deg);
+        filter: blur(random(5) + 5 +vw);
+        aspect-ratio: 1/random(1)+1;
+        width: random(40) + 10 + vw;
+        translate: random(500) - 250 + px  + random(500) - 250 + px;
+        background: linear-gradient(random(180)+deg, $accent, $primary 70%);
+    }
+}
+
+.blob {
+    border-radius: 100%;
+}
