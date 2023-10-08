@@ -17,7 +17,7 @@
         translate: random(500) - 250 + px  + random(500) - 250 + px;
         background: linear-gradient(random(180)+deg, $accent, $primary 70%);
         animation-name : blob-movement;
-        animation: random(40) + 20 + s infinite alternate blob_movement;
+        animation: random(60) + 20 + s infinite alternate blob_movement;
 
         @keyframes blob_movement {
             @for $j from 1 through 10 {
