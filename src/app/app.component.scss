@@ -1,11 +1,17 @@
 @import "../variables.scss";
 
+
+// SECTION BACKGROUND : BLOBS --------------------------------------------------
+
 .blob-container {
     display:flex;
     width:100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    opacity: 0.5;
+    opacity: 0.3;
+    position :absolute;
+    animation : 5s ease-in fade;
+    animation-iteration-count: 1;
 }
 
 @for $i from 1 through 8 {
@@ -16,7 +22,6 @@
         width: random(40) + 10 + vw;
         translate: random(500) - 250 + px  + random(500) - 250 + px;
         background: linear-gradient(random(180)+deg, $accent, $primary 70%);
-        animation-name : blob-movement;
         animation: random(60) + 20 + s infinite alternate blob_movement;
 
         @keyframes blob_movement {
@@ -29,7 +34,28 @@
     }
 }
 
-
 .blob {
     border-radius: 100%;
+}
+
+@keyframes fade {
+    from {
+        opacity :1;
+    }
+}
+
+// TITLE AND TEXTS -------------------------------------------------------------
+
+@keyframes appear {
+    from {
+        opacity :0;
+    }
+}
+
+.welcome {
+    margin : 4cm auto;
+    font-size: 8vw;
+    width:min-content;
+    font-weight: 700;
+    animation : 3s ease-in appear;
 }
