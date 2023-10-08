@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     opacity: 0.3;
     position :absolute;
-    animation : 5s ease-in fade;
+    animation : 3s ease-in fade;
     animation-iteration-count: 1;
 }
 
@@ -36,6 +36,7 @@
 
 .blob {
     border-radius: 100%;
+    z-index: 1;
 }
 
 @keyframes fade {
@@ -47,15 +48,40 @@
 // TITLE AND TEXTS -------------------------------------------------------------
 
 @keyframes appear {
-    from {
+    0% {
         opacity :0;
+        transform: translateY(60px);
+        scale: 90%;
+    }
+
+    60% {
+        z-index: 0;
+        opacity :0;
+        transform: translateY(100px);
+    }
+}
+
+@keyframes pulse {
+    5% {
+        scale: 105%;
+        opacity: 1;
+    }
+    10% {
+        scale: 100%;
+        opacity: 0.7;
     }
 }
 
 .welcome {
-    margin : 4cm auto;
-    font-size: 8vw;
+    z-index: 0;
+    margin : 4% auto;
+    font-size: 7vw;
     width:min-content;
-    font-weight: 700;
-    animation : 3s ease-in appear;
+    font-weight: 400;
+    animation-name: appear, pulse;
+    animation-duration: 4s, 5s;
+    animation-timing-function: ease-in, ease ;
+    animation-iteration-count: 1, infinite;
+    animation-delay: 0ms, 5s;
+    opacity: 0.7;
 }
