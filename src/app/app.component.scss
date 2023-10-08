@@ -12,12 +12,23 @@
     .blob:nth-child(#{$i}) {
         transform: rotate(random(360)+ deg);
         filter: blur(random(5) + 5 +vw);
-        aspect-ratio: 1/random(1)+1;
+        aspect-ratio: 1/random(1)+0.5;
         width: random(40) + 10 + vw;
         translate: random(500) - 250 + px  + random(500) - 250 + px;
         background: linear-gradient(random(180)+deg, $accent, $primary 70%);
+        animation-name : blob-movement;
+        animation: random(40) + 20 + s infinite alternate blob_movement;
+
+        @keyframes blob_movement {
+            @for $j from 1 through 10 {
+                #{($j * 10%)} {
+                    transform: translateX(random(40) - 20 + vw)+ translateY(random(40) - 20 + vw)+ rotate(360deg);
+                }
+            }
+        } 
     }
 }
+
 
 .blob {
     border-radius: 100%;
