@@ -1,0 +1,178 @@
+@import "../../variables.scss";
+
+.background {
+	position: absolute;
+	bottom: -40vh;
+	left: 0;
+	//background: radial-gradient(ellipse 200vw 200% at 50% 150%, rgba(255,255,255,1), transparent 60%);
+	background-color: white;
+	clip-path: ellipse(52% 40% at 50% 50%);
+	width: 100%;
+	margin: 0;
+	min-height: 30vh;
+	height: 400px;
+	animation: pusle 5s ease-in-out infinite;
+}
+
+main {
+	position: absolute;
+	top: 115vh;
+	left: 0;
+	min-height: 90%;
+	background-color: white;
+	width: 100vw;
+	color: midnightblue;
+}
+
+h1 {
+	font-size: 7rem;
+	text-align: center;
+	margin: 1rem;
+}
+
+.gradient {
+	transition: all 5s ease-in-out;
+	background: radial-gradient(
+			circle closest-corner at 75%,
+			$baby_pink 0%,
+			$baby_blue 100%
+		)
+		no-repeat;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+main:hover h1 {
+	animation: color_change 5s alternate-reverse infinite;
+}
+
+@keyframes color_change {
+	0% {
+		background: $baby_pink;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+	}
+    25% {
+		background: $baby_pink;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+	}
+	100% {
+		background: $baby_blue;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+	}
+}
+
+section {
+    height: 600px;
+	width:84vw;
+	margin: 2rem auto;
+    overflow-x: scroll;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    gap:300px;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+}
+
+section > div {
+    width: 1200px;
+	scroll-snap-align: center;
+	display: flex;
+	flex-flow: column;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	align-content: center;
+	gap:10px;
+}
+
+
+section > div h2 {
+	align-self: flex-end;
+}
+
+section > div:first-child {
+	margin-left:calc(42vw - 350px);
+}
+
+section > div:last-child {
+	margin-right:calc(42vw - 350px);
+}
+
+section img {
+	margin: -100px auto;
+	clip-path: polygon(50% 25%, 100% 50%, 50% 75%, 0% 50%);
+	height: 450px;
+	background-size: cover;
+	cursor: pointer;
+}
+
+img + a {
+	position: absolute;
+	top: 385px;
+	left:calc(50vw - 80px);
+	visibility: hidden;
+	width:160px;
+	margin:0 auto;
+	transition: 0s;
+	cursor: pointer;
+	text-align: center;
+	color: $background;
+	filter: drop-shadow(1px 1px 3px white);
+}
+
+img:hover {
+	filter: brightness(200%) contrast(70%) saturate(120%);
+}
+
+img + a:hover {
+	visibility: visible;
+}
+
+img:hover + a {
+	visibility: visible;
+}
+
+h3 {	
+	color:$background;
+	width:fit-content;
+	font-size: 3rem;
+	margin:5px auto;
+	font-weight: 400;
+}
+
+.links {
+	display: flex;
+	width:100%;
+	justify-content: space-around;
+	color: $background;
+	margin-top: -3rem;
+	margin-bottom: 1rem;
+}
+
+.links a {
+	color: $background;
+	font-size: 2rem;
+}
+
+.links a:hover {
+	transform: scale(110%);
+	transition: 0.2s ;
+}
+
+section p {
+	width: 700px;
+	text-align: center;
+	margin:15px auto 5px;
+	font-size: 1.5rem;
+	color: $background;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 4rem;
+	width:fit-content;
+	margin:5px auto;
+}
