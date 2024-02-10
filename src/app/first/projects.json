@@ -3,30 +3,38 @@
         {
             "title": "Ce site web",
             "image": "https://r4.wallpaperflare.com/wallpaper/121/20/857/digital-art-illustration-sunset-city-wallpaper-6980183de1fa6d0bf617c8bf80d156ad.jpg",
-            "description": "In dapibus varius lorem non blandit. Donec lacinia et velit veltincidunt. Nullam ut arcu vel dui malesuada gravida. Mauris etleo sed mi commodo hendrerit.",
-            "date": "01/01/2001",
-            "icon": "<i class=\"fa-solid fa-signature\"></i>"
+            "description": "Fait à partir d'Angular.",
+            "date": "09/02/2024",
+            "icon": "<i class=\"fa-solid fa-signature\"></i>",
+            "github_link" : "https://github.com/Aezurly/aezur",
+            "link" : "https://aezurly.github.io/aezur/"
         },
         {
             "title": "Anael Portfolio",
-            "image": "https://r4.wallpaperflare.com/wallpaper/945/964/996/painting-colors-art-modern-art-wallpaper-f8e6cdc8e0c02c48d0acb1bef802249a.jpg",
-            "description": "In dapibus varius lorem non blandit. Donec lacinia et velit veltincidunt. Nullam ut arcu vel dui malesuada gravida. Mauris etleo sed mi commodo hendrerit.",
-            "date": "01/01/2001",
-            "icon": "<i class=\"fa-regular fa-chess-queen\"></i>"
+            "image": "https://i.ibb.co/FxhVmZW/image.png",
+            "description": "Site de portfolio fait sur commande, reproduction web d'un brouillon pdf donné par la cliente. Fait à partir de Angular. Thème retro, programmation et alternatif pour exposer ses différents projets artistiques.",
+            "date": "05/11/2023",
+            "icon": "<i class=\"fa-regular fa-chess-queen\"></i>",
+            "github_link" : "https://github.com/Aezurly/anael-website",
+            "link" : "https://aezurly.github.io/anael-website/"
         },
         {
             "title": "Donjon & Dragon",
-            "image": "https://r4.wallpaperflare.com/wallpaper/945/964/996/painting-colors-art-modern-art-wallpaper-f8e6cdc8e0c02c48d0acb1bef802249a.jpg",
-            "description": "In dapibus varius lorem non blandit. Donec lacinia et velit veltincidunt. Nullam ut arcu vel dui malesuada gravida. Mauris etleo sed mi commodo hendrerit.",
-            "date": "01/01/2001",
-            "icon": "<i class=\"fa-brands fa-d-and-d\"></i>"
+            "image": "https://i.ibb.co/R7mxyHd/image.png",
+            "description": "Projet personnel de site web pour exposer différents personnages créé pour un jeu de rôle (donjon et dragon). Thème plus moderne.",
+            "date": "19/01/2023",
+            "icon": "<i class=\"fa-brands fa-d-and-d\"></i>",
+            "github_link" : "https://github.com/Aezurly/DnD",
+            "link" : "https://aezurly.github.io/DnD/Home"
         },
         {
             "title": "The Woman in Black",
             "image": "https://r4.wallpaperflare.com/wallpaper/945/964/996/painting-colors-art-modern-art-wallpaper-f8e6cdc8e0c02c48d0acb1bef802249a.jpg",
             "description": "In dapibus varius lorem non blandit. Donec lacinia et velit veltincidunt. Nullam ut arcu vel dui malesuada gravida. Mauris etleo sed mi commodo hendrerit.",
             "date": "01/01/2001",
-            "icon": "<i class=\"fa-solid fa-signature\"></i>"
+            "icon": "<i class=\"fa-solid fa-signature\"></i>",
+            "github_link" : "https://github.com/Aezurly/DnD",
+            "link" : ""
         }
     ]
 } 
