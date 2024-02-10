@@ -1,0 +1,125 @@
+@import "../../variables.scss";
+
+.background {
+	position: absolute;
+	bottom: -40vh;
+	left: 0;
+	//background: radial-gradient(ellipse 200vw 200% at 50% 150%, rgba(255,255,255,1), transparent 60%);
+	background-color: white;
+	clip-path: ellipse(52% 40% at 50% 50%);
+	width: 100%;
+	margin: 0;
+	min-height: 30vh;
+	height: 400px;
+	animation: pusle 5s ease-in-out infinite;
+}
+
+main {
+	position: absolute;
+	top: 115vh;
+	left: 0;
+	min-height: 90%;
+	background-color: white;
+	width: 100vw;
+	color: midnightblue;
+}
+
+h1 {
+	font-size: 7rem;
+	text-align: center;
+	margin: 1rem;
+}
+
+.gradient {
+	transition: all 5s ease-in-out;
+	background: radial-gradient(
+			circle closest-corner at 75%,
+			$baby_pink 0%,
+			$baby_blue 100%
+		)
+		no-repeat;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+main:hover h1 {
+	animation: color_change 5s alternate-reverse infinite;
+}
+
+@keyframes color_change {
+	0% {
+		background: $baby_pink;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+	}
+    25% {
+		background: $baby_pink;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+	}
+	100% {
+		background: $baby_blue;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+	}
+}
+
+section {
+    height: 600px;
+	width:84vw;
+	margin: 2rem auto;
+    overflow-x: scroll;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    gap:300px;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+}
+
+section > div {
+    width: 1200px;
+	cursor: pointer;
+	scroll-snap-align: center;
+	display: flex;
+	flex-flow: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-content: center;
+}
+
+section > div:first-child {
+	margin-left:calc(42vw - 350px);
+}
+
+section > div:last-child {
+	margin-right:calc(42vw - 350px);
+}
+
+section img {
+	margin: -100px auto;
+	clip-path: polygon(50% 25%, 100% 50%, 50% 75%, 0% 50%);
+}
+
+h3 {	
+	color:$background;
+	width:fit-content;
+	font-size: 3rem;
+	margin:5px auto;
+	font-weight: 400;
+}
+
+p {
+	width: 700px;
+	text-align: center;
+	margin:5px auto;
+	font-size: 1.5rem;
+	color: $background;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 4rem;
+	width:fit-content;
+	margin:5px auto;
+}

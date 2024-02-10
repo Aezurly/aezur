@@ -1,5 +1,12 @@
 @import "../variables.scss";
 
+body > * {
+    scroll-snap-align: center;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+}
 
 // SECTION BACKGROUND : BLOBS --------------------------------------------------
 
@@ -10,8 +17,12 @@
     flex-wrap: wrap;
     opacity: 0.3;
     position :absolute;
+    top:0;
+    left:0;
     animation : 3s ease-in fade;
     animation-iteration-count: 1;
+    height:115vh;
+    overflow-y: hidden;
 }
 
 @for $i from 1 through 8 {
@@ -27,7 +38,7 @@
         @keyframes blob_movement {
             @for $j from 1 through 10 {
                 #{($j * 10%)} {
-                    transform: translateX(random(40) - 20 + vw)+ translateY(random(40) - 20 + vw)+ rotate(360deg);
+                    transform: translateX(random(40) - 20 + vw)+ translateY(random(40) - 20 + vw)+ rotate(random(360)+ deg);
                 }
             }
         } 

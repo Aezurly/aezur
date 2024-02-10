@@ -1,0 +1,14 @@
+<section class="background"></section>
+<main>
+	<h1 class="gradient">Projets Personnels</h1>
+	<section>
+		<div *ngFor="let project of projectsList.projects index as i" [attr.id]="'project'+i" (click)="showDiv(i)">
+			<h3>{{project.title}}</h3>
+      <img src="{{project.image}}" width=800px>
+			<p>
+				{{project.description}}
+			</p>
+			<h2 class="gradient" [innerHTML]="project.icon"></h2>
+		</div>
+	</section>
+</main>
