@@ -11,12 +11,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lovers+Quarrel&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    background-color: #c1cdd8;
+    background-color: #e0eaf3;
     color : $text;
     font-family: 'Josefin Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     overflow-x:hidden;
     scroll-behavior: smooth;
     scroll-margin: 0;
+}
+
+app-root {
+    z-index: 3;
 }
 
 app-root > * {
@@ -50,3 +54,47 @@ main {
     background: color-mix(in srgb, $accent 20%, transparent);
     border-radius: 10px;
 }
+
+/* BLOB MOUSE EFFECT */
+// FROM https://codepen.io/Hyperplexed/pen/KKBjvbG
+
+@keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    
+    50% {
+      scale: 1 1.2;
+    }
+    
+    to {
+      rotate: 360deg;
+    }
+  }
+
+#blob-mouse {
+    background-color: white;
+    height: 25vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine , rgb(212, 198, 241));
+    animation: rotate 20s infinite;
+    opacity: 1;
+    z-index: -2;
+
+  }
+
+  #blur {
+    height: calc(100vh - 20px);
+    width: calc(100vw - 20px);
+    top:10px;
+    left:10px;
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(6vmax);
+    clip-path: url(#starPath);
+  }

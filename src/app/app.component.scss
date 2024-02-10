@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-body > * {
+body>* {
     scroll-snap-align: center;
 }
 
@@ -11,27 +11,28 @@ body {
 // SECTION BACKGROUND : BLOBS --------------------------------------------------
 
 .blob-container {
-    display:flex;
-    width:100%;
+    display: flex;
+    width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    opacity: 0.3;
-    position :absolute;
-    top:0;
-    left:0;
-    animation : 3s ease-in fade;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: 3s ease-in fade;
     animation-iteration-count: 1;
-    height:115vh;
+    height: 115vh;
     overflow-y: hidden;
+    z-index: -3;
 }
 
 @for $i from 1 through 8 {
     .blob:nth-child(#{$i}) {
         transform: rotate(random(360)+ deg);
-        filter: blur(random(5) + 5 +vw);
+        filter: blur(random(5) + 4 + vw);
         aspect-ratio: 1/random(1)+0.5;
         width: random(40) + 10 + vw;
-        translate: random(500) - 250 + px  + random(500) - 250 + px;
+        translate: random(500) - 250 + px + random(500) - 250 + px;
         background: linear-gradient(random(180)+deg, $accent, $primary 70%);
         animation: random(60) + 20 + s infinite alternate blob_movement;
 
@@ -41,35 +42,88 @@ body {
                     transform: translateX(random(40) - 20 + vw)+ translateY(random(40) - 20 + vw)+ rotate(random(360)+ deg);
                 }
             }
-        } 
+        }
     }
 }
 
 .blob {
     border-radius: 100%;
-    z-index: 1;
+    z-index: -4;
 }
 
 @keyframes fade {
     from {
-        opacity :1;
+        opacity: 1;
     }
 }
 
 // TITLE AND TEXTS -------------------------------------------------------------
 
-@keyframes appear {
-    0% {
-        opacity :0;
-        transform: translateY(60px);
-        scale: 90%;
-    }
+h1, h1+div, h3 {
+    z-index: 1;
+}
 
-    60% {
-        z-index: 0;
-        opacity :0;
-        transform: translateY(100px);
+h2 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 2rem;
+    margin: 5px auto;
+}
+
+div span {
+    background: linear-gradient(to right,
+            $primary, $accent, $primary
+    );
+    background-size: 200%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+.name {
+    animation: background-pan 2s linear infinite;
+    font-weight: 400;
+}
+
+.poly {
+    animation: background-pan 2s 1s linear infinite alternate-reverse;
+}
+
+@keyframes background-pan {
+    from {
+      background-position: 0% center;
     }
+    
+    to {
+      background-position: -200% center;
+    }
+  }
+
+h1+div {
+    width: 600px;
+    margin: auto;
+    z-index: 1;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+@keyframes appear {
+    // 0% {
+    //     opacity :0;
+    //     transform: translateY(60px);
+    //     scale: 90%;
+    // }
+
+    // 60% {
+    //     z-index: 0;
+    //     opacity :0;
+    //     transform: translateY(100px);
+    // }
 }
 
 @keyframes pulse {
@@ -77,6 +131,7 @@ body {
         scale: 105%;
         opacity: 1;
     }
+
     10% {
         scale: 100%;
         opacity: 0.7;
@@ -85,16 +140,16 @@ body {
 
 .welcome {
     z-index: 0;
-    margin : 4% auto;
+    margin: 4% auto 0px;
     font-size: 7vw;
-    width:min-content;
+    width: min-content;
     font-weight: 400;
     animation-name: appear, pulse;
     animation-duration: 4s, 5s;
-    animation-timing-function: ease-in, ease ;
+    animation-timing-function: ease-in, ease;
     animation-iteration-count: 1, infinite;
     animation-delay: 0ms, 5s;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 @keyframes pulsed {
@@ -102,6 +157,7 @@ body {
         scale: 103%;
         opacity: 1;
     }
+
     from {
         scale: 100%;
         opacity: 0.7;
@@ -109,5 +165,5 @@ body {
 }
 
 .welcome:hover {
-    animation : 2s infinite pulsed;
+    animation: 2s infinite pulsed;
 }
