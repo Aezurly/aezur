@@ -85,13 +85,12 @@ main {
     animation: rotate 20s infinite;
     opacity: 1;
     z-index: -2;
-
   }
 
   #blur {
-    height: calc(100vh - 20px);
+    height: calc(110vh);
     width: calc(100vw - 20px);
-    top:10px;
+    top:15px;
     left:10px;
     position: absolute;
     z-index: -1;

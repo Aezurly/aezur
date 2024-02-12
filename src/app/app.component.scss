@@ -15,7 +15,7 @@ body {
     width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    opacity: 0.5;
+    opacity: 0.7;
     position: absolute;
     top: 0;
     left: 0;
@@ -80,6 +80,8 @@ div span {
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
 }
+
+div span:hover
 
 .name {
     animation: background-pan 2s linear infinite;
